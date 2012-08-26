@@ -45,5 +45,5 @@ Usage
 
 ```bash
 npm install wikifetch -g
-birdeater --article=Dogs
+wikifetch --article=Dogs
 ```
