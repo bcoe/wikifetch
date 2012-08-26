@@ -23,16 +23,16 @@ WikiFetch Crawls a Wikipedia article using Node.js and jQuery. It returns a stru
 	{
 		"title": "Foobar Article",
 		"links": {
-			"Link_to_article: {
-				"text": "Another article.", // Original linked text.
-				"title": "Another_article.", // Title on <a/> tag.
-				"occurrences": 1 // Number of times this article was linked.
+			"Link_to_another_article: {
+				"text": "Another article.", // the text that was linked.
+				"title": "Another_article.", // title attribute <a/> tag.
+				"occurrences": 1 // number of times this article was linked.
 			}
 		},
 		"sections": {
 			"Section Heading": {
 				text: "text contents of section.",
-				images: ["http://foobar.jpg"] // Images occurring in this section.
+				images: ["http://foobar.jpg"] // images occurring within this section.
 			}
 		}
 	}
