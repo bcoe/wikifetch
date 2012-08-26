@@ -17,7 +17,7 @@ I did not want to use a full-featured MediaWiki parser:
 The Solution
 ------------
 
-WikiFetch Crawls a Wikipedia article using Node.js and jQuery. It returns a structured, JSON-representation of the page:
+WikiFetch Crawls a Wikipedia article using Node.js and jQuery. It returns a structured JSON-representation of the page:
 
 ```javscript
 	{
