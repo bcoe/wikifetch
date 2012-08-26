@@ -11,7 +11,7 @@ For some NLP research I'm currently doing, I was interested in parsing structure
 I did not want to use a full-featured MediaWiki parser:
 
 * this would be heavy-handed, all I really wanted was: the text contents from articles, images, and links to other articles.
-* I wanted to be able to extend the approach to other websites, e.g., Reuters.
+* I wanted to be able to extend the approach to other websites, e.g., news sites.
 * I wanted to use a crawler-based approach, rather than downloading a massive dataset.
 
 The Solution
