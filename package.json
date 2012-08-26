@@ -1,0 +1,31 @@
+{
+  "name": "wikifetch",
+  "directories": {
+    "lib": "./lib",
+    "bin": "./bin"
+  },
+  "main": "./lib/index.js",
+  "bin": "./bin/wikifetch.js",
+  "version": "0.0.1",
+  "author": "Ben Coe <bencoe@gmail.com>",
+  "engines": [
+    "node"
+  ],
+  "description": "Uses jQuery to return a structured JSON representation of a Wikipedia article.",
+  "keywords": [
+    "crawler",
+    "twitter",
+    "public-timeline"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bcoe/wikifetch.git"
+  },
+  "dependencies": {
+    "request": ">=2.9.203",
+    "jquery": ">=1.6.3",
+    "sexy-args": ">=1.1.5",
+    "optimist": "0.3.4",
+    "micro-test": "1.0.0"
+  }
+}
