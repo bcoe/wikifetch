@@ -6,28 +6,44 @@ Author: [@benjamincoe](https://twitter.com/#/benjamincoe)
 Problem
 -------
 
-For an NLP project I'm currently working on, I wanted to parse structured information from Wikipedia.
+For some NLP research I'm currently doing, I was interested in parsing structured information from Wikipedia articles.
 
 I did not want to use a full-featured MediaWiki parser:
 
-* this would be a bit heavy-handed, all I really wanted was: the text content of the article, images, and links to other articles.
-* I wanted to use an approach that I could potentially extend to other websites, e.g., news articles.
+* this would be heavy-handed, all I really wanted was: the text contents of the article, images, and links to other articles.
+* I wanted to be able to extend the approach to other websites, e.g., Reuters.
+* I wanted to use a crawler-based approach, rather than downloading a massive database.
 
 The Solution
 ------------
 
-WikiFetch Crawls a Wikipedia article using Node.js and jQuery, returning a structured representation of the page.
+WikiFetch Crawls a Wikipedia article using Node.js and jQuery. It returns a structured, JSON-representation of the page:
 
-```json
+```javscript
 	{
 		"title": "Foobar Article",
 		"links": {
-			"Another_article: {
-				"text": "text content of link.",
-				"title": "title attribute of link.",
-				"
+			"Link_to_article: {
+				"text": "Another article.", // Original linked text.
+				"title": "Another_article.", // Title on <a/> tag.
+				"occurrences": 1 // Number of times this article was linked.
+			}
+		},
+		"sections": {
+			"Section Heading": {
+				text: "text contents of section.",
+				images: ["http://foobar.jpg"] // Images occurring in this section.
 			}
 		}
 	}
 ```
 
+* Links within sections are replaced with [[article name]], which will have a corresponding entry in **links**.
+
+Usage
+-----
+
+```bash
+npm install wikifetch -g
+birdeater --article=Dogs
+```
