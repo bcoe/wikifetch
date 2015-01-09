@@ -4,6 +4,9 @@
     "lib": "./lib",
     "bin": "./bin"
   },
+  "scripts": {
+    "test": "micro-test"
+  },
   "main": "./lib/index.js",
   "bin": "./bin/wikifetch.js",
   "version": "0.0.1",
@@ -11,7 +14,7 @@
   "engines": [
     "node"
   ],
-  "description": "Uses jQuery to return a structured JSON representation of a Wikipedia article.",
+  "description": "Uses cheerio to return a structured JSON representation of a Wikipedia article.",
   "keywords": [
     "crawler",
     "twitter",
@@ -22,10 +25,13 @@
     "url": "git://github.com/bcoe/wikifetch.git"
   },
   "dependencies": {
-    "request": ">=2.9.203",
-    "jquery": ">=1.6.3",
-    "sexy-args": ">=1.1.5",
+    "cheerio": "^0.18.0",
+    "micro-test": "1.0.0",
     "optimist": "0.3.4",
-    "micro-test": "1.0.0"
+    "request": ">=2.9.203",
+    "sexy-args": ">=1.1.5"
+  },
+  "devDependencies": {
+    "micro-test": "^1.0.0"
   }
 }
