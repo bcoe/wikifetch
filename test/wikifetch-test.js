@@ -2,7 +2,7 @@ var equal = require('assert').equal,
 	WikiFetch = require('../lib').WikiFetch;
 
 exports.tests = {
-		'title should be parsed from wikipedia article': function(finished, prefix) {	
+		'title should be parsed from wikipedia article': function(finished, prefix) {
 			var wikiFetch = new WikiFetch();
 			wikiFetch.fetch('Dog', function(err, articleObject) {
 				equal('Dog', articleObject.title, prefix + ' title of article was not parsed.');
@@ -20,7 +20,7 @@ exports.tests = {
 		'text of article should be split into sections': function(finished, prefix) {
 			var wikiFetch = new WikiFetch();
 			wikiFetch.fetch('Dog', function(err, articleObject) {
-				equal(true, articleObject.sections['Dog'].text.indexOf('domesticated') > 0, prefix + ' sections not parsed.');
+				equal(true, articleObject.sections['Dog'].text.indexOf('domestic') > 0, prefix + ' sections not parsed.');
 				equal(true, articleObject.sections['Taxonomy'].text.indexOf('gray wolf') > 0, prefix + ' sections not parsed.');
 				finished();
 			});
@@ -28,14 +28,14 @@ exports.tests = {
 		'text contents of article should have links replaced': function(finished, prefix) {
 			var wikiFetch = new WikiFetch();
 			wikiFetch.fetch('Dog', function(err, articleObject) {
-				equal(true, articleObject.sections['Dog'].text.indexOf('[[Police_dog]]') > 0, prefix + ' links not replaced.');
+				equal(true, articleObject.sections['Dog'].text.indexOf('[[Domestication_of_the_dog]]') > 0, prefix + ' links not replaced.');
 				finished();
 			});
 		},
 		'images should be extracted from article sections': function(finished, prefix) {
 			var wikiFetch = new WikiFetch();
 			wikiFetch.fetch('Dog', function(err, articleObject) {
-				equal('http://upload.wikimedia.org/wikipedia/commons/thumb/2/26/YellowLabradorLooking_new.jpg/260px-YellowLabradorLooking_new.jpg', articleObject.sections['Dog'].images[0], prefix + ' article image not extracted.');
+				equal('http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Cavalier_King_Charles_Spaniel_trio.jpg/220px-Cavalier_King_Charles_Spaniel_trio.jpg', articleObject.sections['Types and breeds'].images[0], prefix + ' article image not extracted.');
 				finished();
 			});
 		}
